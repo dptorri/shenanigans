@@ -1,3 +1,5 @@
 micronaut:
   application:
     name: shellCompanies
+  server:
+    port: 8081

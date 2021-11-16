@@ -13,5 +13,19 @@ mn create-app --features=reactor,graalvm example.ShellCompanies --build=gradle -
 We use `com.github.javafaker.Faker;`
 also set ShellCompanies on port -> 8081
 ```
+@Controller("rx/")
+public class ShellCompanyController {
+    private static final Logger logger = LoggerFactory.getLogger(ShellCompany.class);
 
+    @Get("shellcompanies")
+    public Collection<String> shellcompanies(){
+        Faker fake = new Faker();
+        List<String> listShellcompanies = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            var shellcompany= fake.company();
+            listShellcompanies.add(shellcompany.name()+" - "+shellcompany.industry());
+        }
+        return listShellcompanies;
+    }
+}
 ```

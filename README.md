@@ -9,4 +9,9 @@ mn create-app --features=reactor,graalvm example.ShellCompanies --build=gradle -
 ```
  ./gradlew tasks run 
 ```
-#### 2.
+#### 2. Generate Fake ShellCompanies
+We use `com.github.javafaker.Faker;`
+also set ShellCompanies on port -> 8081
+```
+
+```
